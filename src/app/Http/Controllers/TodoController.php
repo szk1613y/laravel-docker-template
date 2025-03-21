@@ -32,7 +32,7 @@ class TodoController extends Controller
     public function store(TodoRequest $request)
     {
         $inputs = $request->all();
-
+    
         $this->todo->fill($inputs);
         $this->todo->save();
 
@@ -56,9 +56,9 @@ class TodoController extends Controller
     }
 
 
-    public function update(TodoRequest $request, $id) // 第1引数: リクエスト情報の取得　第2引数: ルートパラメータの取得
+    public function update(TodoRequest $request, $id)
     {
-    // TODO: リクエストされた値を取得
+
         $inputs = $request->all();
         $todo = $this->todo->find($id);
         $todo->fill($inputs)->save();
